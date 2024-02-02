@@ -153,3 +153,21 @@ a {
   font-weight: 600;
   color: blue;
 }
+
+/* >>>>>>>>>>>>>FINAL PAGE CSS<<<<<<<<<<<<<< */
+.final_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.final_content img {
+  width: 5rem;
+  margin: 5rem 0 4rem;
+}
+.final_content p {
+  width: 30rem;
+  text-align: center;
+  margin-top: 1rem;
+}

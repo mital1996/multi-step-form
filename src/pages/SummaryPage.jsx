@@ -40,9 +40,9 @@ const SummaryPage = () => {
             <Link to={"/add_on"} style={{ color: "gray" }}>
               Go Back
             </Link>
-            <Link to={"/summary"}>
+            <Link to={"/final"}>
               {" "}
-              <InputButton text={"Next"} />
+              <InputButton text={"Confirm"} />
             </Link>
           </div>
         </div>

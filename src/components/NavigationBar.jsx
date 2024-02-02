@@ -56,7 +56,7 @@ const NavigationBar = () => {
         <li className={classes.content}>
           <p
             className={
-              pathname === "/summary"
+              pathname === "/summary" || pathname === "/final"
                 ? classes.active_button
                 : classes.roundButton
             }
