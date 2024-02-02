@@ -1,0 +1,155 @@
+/* >>>>>>>>>>> INFO PAGE CSS <<<<<<<<<<<<<<<< */
+.main_content {
+  float: left !important;
+  margin: 1rem 9.5rem;
+}
+.main_content p {
+  color: hsl(231, 11%, 63%);
+  margin-top: 0.6rem;
+}
+.main_content h1 {
+  font-weight: 700;
+  margin-bottom: 0 !important;
+}
+.form_contain {
+  margin-top: 3rem;
+}
+.form_group {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+.form_group label {
+  color: #000;
+  margin-bottom: 3px !important;
+}
+.form_input {
+  padding: 0.6rem !important;
+  color: hsl(231, 11%, 63%);
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.1) !important;
+}
+.invalid {
+  border-color: hsl(354, 84%, 57%) !important;
+}
+.error_message {
+  color: hsl(354, 84%, 57%) !important;
+  font-size: 13px !important;
+}
+/* >>>>>>>>>>> PLAN PAGE CSS <<<<<<<<<<<<<<<< */
+.card_contain {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between !important;
+  border: 1px solid hsl(231, 11%, 63%);
+  border-radius: 8px;
+  width: 8rem;
+  height: 11rem;
+  margin: 2.2rem 0.7rem;
+  padding: 0.9rem;
+}
+.card:hover,
+.card:active,
+.card:focus {
+  border-color: blue !important;
+}
+
+.card img {
+  width: 3rem;
+}
+.card p {
+  color: #000 !important;
+  margin: 0 !important;
+  font-weight: 500;
+}
+.card .para {
+  font-weight: 400;
+  font-size: 13px;
+}
+.card span {
+  color: hsl(231, 11%, 63%);
+}
+a {
+  text-decoration: none !important;
+}
+/*>>>>>>>>>>>>>>>>ADDS ON PAGES<<<<<<<<<<<<<<<<<<<*/
+
+.add_content {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0 4rem;
+}
+.add_card {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid hsl(231, 11%, 63%);
+  border-radius: 8px;
+  width: 28rem;
+  padding: 0.7rem 1rem;
+  margin: 0.7rem 0;
+}
+.checked {
+  border-color: blue !important;
+  background-color: hsl(217, 100%, 97%);
+}
+.checkbox:checked {
+  border-color: red;
+}
+.add_card p {
+  color: #000;
+  margin: 0 !important;
+  font-weight: 500;
+}
+.add_card span {
+  color: hsl(231, 11%, 63%);
+  margin: 0 !important;
+  font-size: 13px;
+}
+.add_para {
+  color: blue !important;
+  font-weight: 400 !important;
+}
+.add_div {
+  margin-left: 1rem;
+}
+/* >>>>>>>>>>>>>>>>>SUMMARY PAGE<<<<<<<<<<<<< */
+.summary_content {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(217, 100%, 97%);
+  padding: 0.9rem;
+  margin-top: 3rem;
+}
+.summary_first_row {
+  display: flex;
+  justify-content: space-between;
+}
+.summary_first_row p {
+  color: #000;
+  font-weight: 500;
+  margin: 0.3rem 0 !important;
+}
+.summary_first_row span {
+  color: hsl(231, 11%, 63%) !important;
+  text-decoration: underline;
+}
+.summary_row {
+  display: flex;
+  justify-content: space-between;
+}
+.summary_row p {
+  margin: 0.3rem 0 !important;
+}
+.final_row {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0 5rem;
+}
+.final_row span {
+  font-weight: 600;
+  color: blue;
+}

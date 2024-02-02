@@ -1,13 +1,59 @@
+:root {
+  --color-primary-marineBlue: hsl(213, 96%, 18%);
+  --color-primary-purplishBlue: hsl(243, 100%, 62%);
+  --color-primary-pastalblue: hsl(228, 100%, 84%);
+  --color-primary-lightBlue: hsl(206, 94%, 87%);
+  --color-primary-strawberryRed: hsl(354, 84%, 57%);
+
+  --color-neutral-coolGray: hsl(231, 11%, 63%);
+  --color-neutral-white: hsl(0, 0%, 100%);
+  --color-light-gray: hsl(229, 24%, 87%);
+  --color-magnolia: hsl(217, 100%, 97%);
+  --color-alabaster: hsl(231, 100%, 99%);
+
+  --font-size-bodyCopy: 1rem;
+  --font-family-bodyCopy: "Ubuntu", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-primary-lightBlue) !important;
+  padding-block-end: 1rem;
+  padding-block-start: 1rem;
+  font-weight: var(--font-weight-regular);
+}
+p {
+  font-size: var(--font-size-bodyCopy);
+  line-height: 1.3;
+  font-weight: var(--font-weight-regular);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.box_content {
+  background-color: var(--color-neutral-white);
+  padding: 1rem;
+  margin: 0 auto;
+  border-radius: 5px;
+  max-width: 70%;
+  /* height: 659px; */
+}
+.main_row {
+  display: flex !important;
+}
+
+.button {
+  background-color: var(--color-primary-marineBlue) !important;
+  color: var(--color-neutral-white) !important;
+  /* margin-top: 3rem; */
+  width: 6rem;
 }

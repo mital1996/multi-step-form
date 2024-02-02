@@ -1,0 +1,64 @@
+:root {
+  --color-primary-pastelBlue: hsl(228, 100%, 84%);
+  --color-neutral-lightGray: hsl(229, 24%, 87%);
+  --color-neutral-magnolia: hsl(217, 100%, 97%);
+  --color-neutral-alabaster: hsl(231, 100%, 99%);
+  --color-neutral-white: hsl(0, 0%, 100%);
+}
+.img_content img {
+  width: 120% !important;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 4.6rem;
+  left: 13rem;
+}
+ul div {
+  margin-left: 1rem;
+}
+ul p {
+  margin: 3px 5px;
+  text-align: left;
+  color: var(--color-neutral-lightGray);
+}
+.content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+li {
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+.other_para {
+  color: var(--color-neutral-white);
+  font-weight: 500;
+}
+
+.active_button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-neutral-alabaster);
+  background-color: var(--color-neutral-magnolia);
+  color: #000;
+  font-size: 18px;
+  line-height: 40px;
+  text-align: center !important;
+  margin-bottom: 10px;
+}
+.roundButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-neutral-alabaster);
+  color: var(--color-neutral-white);
+  font-size: 18px;
+  line-height: 40px;
+  text-align: center !important;
+  margin-bottom: 10px;
+}
