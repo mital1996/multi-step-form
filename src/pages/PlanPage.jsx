@@ -7,9 +7,30 @@ import pro from "../images/icon-pro.svg";
 import { Link } from "react-router-dom";
 import InputButton from "../components/InputButton";
 import SwitchCheckbox from "../components/SwitchCheckbox";
+import { useDispatch, useSelector } from "react-redux";
+import { updateSelectedPlan } from "../features/planSlice";
 
 const PlanPage = () => {
   const [value, setValue] = useState("monthly");
+  const { selectedPlan, billingFrequency } = useSelector((state) => state.plan);
+
+  const dispatch = useDispatch();
+  const handlePlanSelect = (selectedPlan) => {
+    dispatch(updateSelectedPlan({ selectedPlan, billingFrequency: value }));
+  };
+
+  const handleToggle = () => {
+    const updatedValue = value === "monthly" ? "yearly" : "monthly";
+    setValue(updatedValue);
+
+    dispatch(
+      updateSelectedPlan({
+        selectedPlan,
+        billingFrequency: updatedValue,
+      })
+    );
+  };
+
   return (
     <div>
       <MainContain>
@@ -17,31 +38,46 @@ const PlanPage = () => {
           <h1>Select Your Plan</h1>
           <p>You have the option of monthly or yearly billing.</p>
           <div className={classes.card_contain}>
-            <Link className={classes.card}>
+            <Link
+              className={`${classes.card} ${
+                selectedPlan === "Arcade" && classes.selectedCard
+              }`}
+              onClick={() => handlePlanSelect("Arcade")}
+            >
               <img src={arcade} alt="arcade" />
               <div>
                 <p>Arcade</p>
-                <span>$9/mo</span>
+                <span>{`${value === "yearly" ? "$90/yr" : "$9/mo"}`}</span>
                 {value === "yearly" && (
                   <p className={classes.para}>2 Months Free</p>
                 )}
               </div>
             </Link>
-            <Link className={classes.card}>
+            <Link
+              className={`${classes.card} ${
+                selectedPlan === "Advanced" && classes.selectedCard
+              }`}
+              onClick={() => handlePlanSelect("Advanced")}
+            >
               <img src={advanced} alt="advanced" />
               <div>
                 <p>Advanced</p>
-                <span>$12/mo</span>
+                <span>{`${value === "yearly" ? "$120/yr" : "$12/mo"}`}</span>
                 {value === "yearly" && (
                   <p className={classes.para}>2 Months Free</p>
                 )}
               </div>
             </Link>
-            <Link className={classes.card}>
+            <Link
+              className={`${classes.card} ${
+                selectedPlan === "Pro" && classes.selectedCard
+              }`}
+              onClick={() => handlePlanSelect("Pro")}
+            >
               <img src={pro} alt="pro" />
               <div>
                 <p>Pro</p>
-                <span>$15/mo</span>
+                <span>{`${value === "yearly" ? "$150/yr" : "$15/mo"}`}</span>
                 {value === "yearly" && (
                   <p className={classes.para}>2 Months Free</p>
                 )}
@@ -50,10 +86,8 @@ const PlanPage = () => {
           </div>
           <div className={classes.check_contain}>
             <SwitchCheckbox
-              isOn={value === "yearly"}
-              handleToggle={() =>
-                setValue(value === "monthly" ? "yearly" : "monthly")
-              }
+              billingFrequency={billingFrequency}
+              handleToggle={handleToggle}
             />
           </div>
           <div className="d-flex justify-content-between mt-5">

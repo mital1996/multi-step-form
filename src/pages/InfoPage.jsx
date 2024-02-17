@@ -5,23 +5,12 @@ import InputButton from "../components/InputButton";
 import classes from "./style.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { userForm } from "../features/InfoSlice";
+import { validationSchema } from "../validation/validate";
 
 const InfoPage = () => {
-  const validationSchema = Yup.object().shape({
-    name: Yup.string().required("Name is required"),
-    email: Yup.string()
-      .email("Invalid email")
-      .required("Email is required")
-      .matches(
-        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-        "Invalid email format"
-      ),
-    phone: Yup.string()
-      .required("Phone number is required")
-      .matches(/^[0-9]+$/, "Phone number must contain only numeric characters"),
-  });
   const {
     register,
     handleSubmit,
@@ -34,9 +23,18 @@ const InfoPage = () => {
     },
     resolver: yupResolver(validationSchema),
   });
-  // console.log("form>>>", errors.name);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const user = useSelector((state) => state.user);
+  // console.log("user>>>>>", user);
+
   const onSubmit = (data) => {
-    console.log("Form submitted:", data);
+    //console.log("Form submitted:>>>>>", data);
+    dispatch(userForm(data));
+    if (data) {
+      navigate("/plan");
+    }
   };
   return (
     <MainContain>
@@ -54,14 +52,14 @@ const InfoPage = () => {
                   </div>
                 )}
               </div>
-
               <Form.Control
                 className={`${
                   errors.name ? classes.invalid : classes.form_input
                 }`}
-                placeholder="e.g. Stephen King"
+                placeholder={user.name || "e.g. Stephen King"}
                 name="name"
                 {...register("name")}
+                autoComplete="off"
               />
             </FormGroup>
 
@@ -74,14 +72,14 @@ const InfoPage = () => {
                   </div>
                 )}
               </div>
-
               <Form.Control
                 className={`${
                   errors.email ? classes.invalid : classes.form_input
                 }`}
-                placeholder="e.g. stephenking@lorem.com"
+                placeholder={user.email || "e.g. stephenking@lorem.com"}
                 name="email"
                 {...register("email")}
+                autoComplete="off"
               />
             </FormGroup>
 
@@ -94,21 +92,20 @@ const InfoPage = () => {
                   </div>
                 )}
               </div>
-
               <Form.Control
                 className={`${
                   errors.phone ? classes.invalid : classes.form_input
                 }`}
-                placeholder="e.g. +1 234 567 890"
+                placeholder={user.phone || "e.g. +1 234 567 890"}
                 name="phone"
                 {...register("phone")}
+                autoComplete="off"
               />
             </FormGroup>
+
             <div className="d-flex justify-content-end mt-5">
-              <Link to={"/plan"}>
-                {" "}
-                <InputButton text={"Next"} />
-              </Link>
+              {" "}
+              <InputButton text={"Next"} />
             </div>
           </Form>
         </div>

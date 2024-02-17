@@ -52,12 +52,16 @@
   margin: 2.2rem 0.7rem;
   padding: 0.9rem;
 }
-.card:hover,
-.card:active,
-.card:focus {
+.card ::after,
+.card:checked {
+  border-color: blue;
+}
+.selectedCard {
   border-color: blue !important;
 }
-
+a:checked {
+  border-color: red;
+}
 .card img {
   width: 3rem;
 }
