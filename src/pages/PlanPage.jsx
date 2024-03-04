@@ -45,7 +45,7 @@ const PlanPage = () => {
               onClick={() => handlePlanSelect("Arcade")}
             >
               <img src={arcade} alt="arcade" />
-              <div>
+              <div className={classes.card_div}>
                 <p>Arcade</p>
                 <span>{`${value === "yearly" ? "$90/yr" : "$9/mo"}`}</span>
                 {value === "yearly" && (

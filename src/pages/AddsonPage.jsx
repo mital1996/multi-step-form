@@ -8,6 +8,7 @@ import { addOnSelectedPlan } from "../features/addsOnSlice";
 
 const AddsonPage = () => {
   const { billingFrequency } = useSelector((state) => state.plan);
+  const { addsOnPlan } = useSelector((state) => state.addsOn);
 
   const dispatch = useDispatch();
 
@@ -49,14 +50,19 @@ const AddsonPage = () => {
           <div className={classes.add_content}>
             <Link
               className={`${classes.add_card} ${
-                checkboxes.checkbox1 && classes.checked
+                checkboxes.checkbox1 || addsOnPlan.includes("Online Service")
+                  ? classes.checked
+                  : ""
               }`}
               onClick={() => handleCheckboxChange("checkbox1")}
             >
               <div style={{ display: "flex" }}>
                 <input
                   type="checkbox"
-                  checked={checkboxes.checkbox1}
+                  checked={
+                    checkboxes.checkbox1 ||
+                    addsOnPlan.includes("Online Service")
+                  }
                   onChange={() => handleCheckboxChange("checkbox1")}
                 />
                 <div className={classes.add_div}>
@@ -70,14 +76,19 @@ const AddsonPage = () => {
             </Link>
             <Link
               className={`${classes.add_card} ${
-                checkboxes.checkbox2 && classes.checked
+                checkboxes.checkbox2 || addsOnPlan.includes("Larger storage")
+                  ? classes.checked
+                  : ""
               }`}
               onClick={() => handleCheckboxChange("checkbox2")}
             >
               <div style={{ display: "flex" }}>
                 <input
                   type="checkbox"
-                  checked={checkboxes.checkbox2}
+                  checked={
+                    checkboxes.checkbox2 ||
+                    addsOnPlan.includes("Larger storage")
+                  }
                   onChange={() => handleCheckboxChange("checkbox2")}
                 />
                 <div className={classes.add_div}>
@@ -91,14 +102,20 @@ const AddsonPage = () => {
             </Link>
             <Link
               className={`${classes.add_card} ${
-                checkboxes.checkbox3 && classes.checked
+                checkboxes.checkbox3 ||
+                addsOnPlan.includes("Customizable Profile")
+                  ? classes.checked
+                  : ""
               }`}
               onClick={() => handleCheckboxChange("checkbox3")}
             >
               <div style={{ display: "flex" }}>
                 <input
                   type="checkbox"
-                  checked={checkboxes.checkbox3}
+                  checked={
+                    checkboxes.checkbox3 ||
+                    addsOnPlan.includes("Customizable Profile")
+                  }
                   onChange={() => handleCheckboxChange("checkbox3")}
                 />
                 <div className={classes.add_div}>

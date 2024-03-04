@@ -8,7 +8,7 @@ const NavigationBar = () => {
 
   return (
     <div>
-      <div className={classes.img_content}>
+      <div className={classes.image_contain}>
         <img src={sidebar} alt="sidebar" />
       </div>
       <ul>

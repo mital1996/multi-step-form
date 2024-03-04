@@ -1,7 +1,9 @@
 import * as Yup from "yup";
 
 export const validationSchema = Yup.object().shape({
-  name: Yup.string().required("Name is required"),
+  name: Yup.string()
+    .required("Name is required")
+    .max(20, "Name must be at most 20 characters long"),
   email: Yup.string()
     .email("Invalid email")
     .required("Email is required")
@@ -11,5 +13,8 @@ export const validationSchema = Yup.object().shape({
     ),
   phone: Yup.string()
     .required("Phone number is required")
-    .matches(/^[0-9]+$/, "Phone number must contain only numeric characters"),
+    .matches(
+      /^[0-9]{10}$/,
+      "number must contain only numeric char or 10 digit"
+    ),
 });

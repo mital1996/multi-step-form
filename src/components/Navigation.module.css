@@ -5,8 +5,8 @@
   --color-neutral-alabaster: hsl(231, 100%, 99%);
   --color-neutral-white: hsl(0, 0%, 100%);
 }
-.img_content img {
-  width: 120% !important;
+.image_contain img {
+  width: 120%;
 }
 
 ul {
@@ -61,4 +61,24 @@ li {
   line-height: 40px;
   text-align: center !important;
   margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 550px) {
+  .image_contain img {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    position: absolute !important;
+    top: -6rem !important;
+    left: 3rem !important;
+    margin: 0;
+    padding: 0;
+    background-color: red !important;
+  }
+  .content div {
+    display: none;
+  }
 }

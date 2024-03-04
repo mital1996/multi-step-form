@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  selectedPlan: null,
+  selectedPlan: "Arcade",
   billingFrequency: "monthly",
-  selectedPlanPrice: null,
+  selectedPlanPrice: 9,
 };
 
 const planSlice = createSlice({
@@ -14,7 +14,6 @@ const planSlice = createSlice({
       const { selectedPlan, billingFrequency } = action.payload;
       let selectedPlanPrice = null;
 
-      // Calculate price based on selected plan and billing frequency
       switch (selectedPlan) {
         case "Arcade":
           selectedPlanPrice = billingFrequency === "yearly" ? 90 : 9;

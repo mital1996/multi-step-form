@@ -47,3 +47,9 @@
 .check_contain label {
   margin: 0.6rem;
 }
+
+@media only screen and (max-width: 600px) {
+  .check_contain {
+    margin-top: 10px;
+  }
+}

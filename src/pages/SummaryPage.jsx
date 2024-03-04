@@ -37,7 +37,7 @@ const SummaryPage = () => {
                 </Link>
               </div>
 
-              <p>{`${selectedPlanPrice}/${planDuration}`}</p>
+              <p>{`$${selectedPlanPrice}/${planDuration}`}</p>
             </div>
             <hr />
             {addonPrices.map((addplan) => {
@@ -54,8 +54,12 @@ const SummaryPage = () => {
             })}
           </div>
           <div className={classes.final_row}>
-            <p>Total (per month)</p>
-            <span>{`$${totalMonthlyPrice}/mo`}</span>
+            <p>{`${
+              billingFrequency === "monthly"
+                ? "Total (per month)"
+                : " Total (per yearly)"
+            }`}</p>
+            <span>{`$${totalMonthlyPrice}/${planDuration}`}</span>
           </div>
           <div className="d-flex justify-content-between mt-5">
             <Link to={"/add_on"} style={{ color: "gray" }}>
