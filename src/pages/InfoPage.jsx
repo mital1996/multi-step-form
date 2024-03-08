@@ -16,11 +16,6 @@ const InfoPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-    },
     resolver: yupResolver(validationSchema),
   });
 
@@ -56,6 +51,7 @@ const InfoPage = () => {
                 }`}
                 placeholder={user.name || "e.g. Stephen King"}
                 name="name"
+                defaultValue={user.name || ""}
                 {...register("name")}
                 autoComplete="off"
               />
@@ -74,6 +70,7 @@ const InfoPage = () => {
                 className={`${
                   errors.email ? classes.invalid : classes.form_input
                 }`}
+                defaultValue={user.email || ""}
                 placeholder={user.email || "e.g. stephenking@lorem.com"}
                 name="email"
                 {...register("email")}
@@ -96,6 +93,7 @@ const InfoPage = () => {
                 }`}
                 placeholder={user.phone || "e.g. +1 234 567 890"}
                 name="phone"
+                defaultValue={user.phone || ""}
                 {...register("phone")}
                 autoComplete="off"
               />

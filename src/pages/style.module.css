@@ -56,9 +56,7 @@
 .selectedCard {
   border-color: blue !important;
 }
-/* a:checked {
-  border-color: red;
-} */
+
 .card img {
   width: 3rem;
 }
@@ -169,9 +167,9 @@ a {
   text-align: center;
   margin-top: 1rem;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 550px) {
   .main_content {
-    margin: 0 auto;
+    margin: 0 !important;
   }
   .main_content p {
     font-size: small;
@@ -184,8 +182,7 @@ a {
   }
   .card {
     flex-direction: row;
-    padding: 1rem;
-    height: 3.5rem;
+    height: 4.6rem;
     width: 18rem;
     margin: 0 0 6px;
   }
@@ -199,10 +196,16 @@ a {
 
   .add_card {
     width: 18rem;
-    padding: 0.4rem 0.6rem;
+    padding: 0.3rem 0.6rem;
+  }
+  .summary_content {
+    margin-top: 1rem;
   }
   .final_content img {
     width: 4rem;
     margin: 3rem 0 2.5rem;
+  }
+  .final_row {
+    margin-bottom: 1rem;
   }
 }

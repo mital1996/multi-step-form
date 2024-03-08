@@ -7,7 +7,7 @@ const NavigationBar = () => {
   const { pathname } = useLocation();
 
   return (
-    <div>
+    <div className={classes.navigate_container}>
       <div className={classes.image_contain}>
         <img src={sidebar} alt="sidebar" />
       </div>

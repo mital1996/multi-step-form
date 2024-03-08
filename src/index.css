@@ -45,7 +45,6 @@ code {
   margin: 0 auto;
   border-radius: 5px;
   max-width: 70%;
-  overflow: hidden;
 }
 .main_row {
   display: flex !important;
@@ -62,16 +61,15 @@ code {
     background-image: url("./images/bg-sidebar-mobile.svg");
     background-repeat: no-repeat;
     background-size: 100%;
-    z-index: 0;
   }
   .box_content {
-    position: relative;
-    top: 7.5rem;
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
   }
   .main_row {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
   }
 }

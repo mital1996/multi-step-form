@@ -50,6 +50,6 @@
 
 @media only screen and (max-width: 600px) {
   .check_contain {
-    margin-top: 10px;
+    margin: 2px 0 0 !important;
   }
 }

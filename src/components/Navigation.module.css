@@ -71,14 +71,23 @@ li {
   ul {
     display: flex;
     justify-content: center;
-    position: absolute !important;
-    top: -6rem !important;
-    left: 3rem !important;
-    margin: 0;
-    padding: 0;
-    background-color: red !important;
+    position: relative;
+    top: -4rem !important;
+    left: -1rem !important;
   }
   .content div {
     display: none;
+  }
+  .roundButton {
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .active_button {
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 20px;
   }
 }

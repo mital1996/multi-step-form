@@ -40,10 +40,10 @@ const SummaryPage = () => {
               <p>{`$${selectedPlanPrice}/${planDuration}`}</p>
             </div>
             <hr />
-            {addonPrices.map((addplan) => {
+            {addonPrices.map((addplan, index) => {
               if (addplan) {
                 return (
-                  <div key={addplan} className={classes.summary_row}>
+                  <div key={index} className={classes.summary_row}>
                     <p>{addplan.name}</p>
                     <span>{`$${addplan.price}/mo`}</span>
                   </div>
